@@ -7,7 +7,10 @@ const app = express();
 
 // 1. הגדרות CORS מורחבות (למניעת בעיות Authorization)
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+origin: [
+    'http://localhost:5173', 
+    'https://smart-cart-frontend-chi.vercel.app' // הכתובת החדשה שקיבלת!
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
